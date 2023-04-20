@@ -7666,4 +7666,10 @@ lesshat-selector {
     color: #f3a735
 }
 
+#msg {
+    color: #7cfc00;
+    margin-top: 10px;
+    display: block;
+}
+
 /*# sourceMappingURL=style.min.css.map */

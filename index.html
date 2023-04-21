@@ -190,7 +190,7 @@
                               </div>
                               <div class="item-info-details">
                                 <div id="cryptoCode" class="crypto-page">
-                                  <input id="cryptoLink" value="0x34a9c05b638020a07bb153bf624c8763bf8b4a86" readonly>
+                                  <input id="cryptoLink" value="contract" readonly>
                                   <div id="cryptoCopy" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Address">
                                     <span class="copy-icon">
                                       <i class="icofont-ui-copy" aria-hidden="true" data-copytarget="#cryptoLink"></i>
@@ -248,10 +248,10 @@
                     <p>Developer: 1%</p>
                   </div>
                   <div class="buying-btns d-flex flex-wrap">
-                    <a href="0x34a9c05b638020a07bb153bf624c8763bf8b4a86" class="default-btn move-right">
+                    <a href="site" class="default-btn move-right">
                       <span>Buy GUNDA</span>
                     </a>
-                    <a href="0x34a9c05b638020a07bb153bf624c8763bf8b4a86" class="default-btn move-right">
+                    <a href="contract" class="default-btn move-right">
                       <span>View Contract</span>
                     </a>
                   </div>
@@ -368,19 +368,6 @@
             </div> -->
             <div class="row g-4 align-items-center justify-content-center">
               <div class="col-lg-6">
-                <div class="newsletter-part">
-                  <div class="ft-header">
-                    <h4>Get The Gunda Inu Updates</h4>
-                  </div>
-                  <!-- <form action="index.html#"></form> -->
-                  <form name="submit-to-google-sheet">
-                    <input type="email" name="Email" placeholder="Your Mail Address">
-                    <button type="submit" data-blast="bgColor"> Subscribe now</button>
-                  </form>
-                  <span id="msg"></span>
-                </div>
-              </div>
-              <div class="col-lg-6">
                 <div class="social-part ps-lg-5">
                   <div class="ft-header">
                     <h4>Join the Community</h4>
@@ -392,7 +379,7 @@
                       </a>
                     </li>
                     <li class="social-link">
-                      <a href="https://telegram.me/gundainuerc20" data-blast="bgColor">
+                      <a href="https://t.me/GUNDAPORTAL" data-blast="bgColor">
                         <i class="icofont-telegram"></i>
                       </a>
                     </li>
@@ -426,23 +413,5 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/functions.js"></script>
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbyWFnzMIcUHBbY2cCT-i9esRhFGFafo0UDMP4S-3CE3XmAR_SaB2HFtMgt6N4Q6ROG7KA/exec'
-      const form = document.forms['submit-to-google-sheet']
-      const msg  = document.getElementById("msg")
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            msg.innerHTML = "Thank You For Subscribing!"
-            setTimeout(function(){
-              msg.innerHTML = ""
-            },5000)
-            form.reset()
-          })
-          .catch(error => console.error('Error!', error.message))
-      })
-    </script>
   </body>
 </html>

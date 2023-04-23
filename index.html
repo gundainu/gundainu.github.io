@@ -371,6 +371,19 @@
             </div> -->
             <div class="row g-4 align-items-center justify-content-center">
               <div class="col-lg-6">
+                <div class="newsletter-part">
+                  <div class="ft-header">
+                    <h4>Get The Gunda Inu Updates</h4>
+                  </div>
+                  <!-- <form action="index.html#"></form> -->
+                  <form name="submit-to-google-sheet">
+                    <input type="email" name="Email" placeholder="Your Mail Address">
+                    <button type="submit" data-blast="bgColor"> Subscribe now</button>
+                  </form>
+                  <span id="msg"></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
                 <div class="social-part ps-lg-5">
                   <div class="ft-header">
                     <h4>Join the Community</h4>
@@ -416,5 +429,23 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/functions.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyWFnzMIcUHBbY2cCT-i9esRhFGFafo0UDMP4S-3CE3XmAR_SaB2HFtMgt6N4Q6ROG7KA/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg  = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Thank You For Subscribing!"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
